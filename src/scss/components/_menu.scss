@@ -1,0 +1,49 @@
+
+.titre-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+
+  position: relative;
+  z-index: 200;
+
+  font-size: 35px;
+
+  background: #fff;
+}
+
+
+.liste-menu {
+  display: grid;
+  grid-gap: 10px;
+  justify-items: center;
+
+  position: relative;
+  top: -200px;
+  z-index: 100;
+
+  list-style-type: none;
+  padding: 0 0 20px 0;
+  margin: 0;
+
+  background: #fff;
+
+  transition: top 0.4s ease-in-out;
+}
+
+.main-nav:hover  .liste-menu {
+  top: 0;
+}
+
+
+
+
+.liste-menu a {
+  font-size: 22px;
+  color: #000;
+}
+
+.liste-menu a:hover {
+  text-decoration: underline;
+}
