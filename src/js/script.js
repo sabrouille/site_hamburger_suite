@@ -31,5 +31,37 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
     ]
 
+    var type = new URLSearchParams(window.location.search).get("type") || "pizza";
+        //console.log(window.location.search);
+        //console.log(new URLSearchParams(window.location.search));
+        //console.log(new URLSearchParams(window.location.search).get("type"));
+    var infoPage = informations.find(x => x.id === type);
+    //console.log(infoPage);
 
+    var title = document.querySelector(".main-title");
+    title.innerHTML = infoPage.title;
+
+    var slogan = document.querySelector(".sub-title");
+    slogan.innerHTML = infoPage.slogan;
+
+    var desc = document.querySelector(".sub-description p");
+    desc.innerHTML = infoPage.description;
+
+    var img = document.querySelector(".sub-image img");
+    img.src = infoPage.image;
+
+    var list = document.querySelector(".type-list");
+    list.innerHTML = "";
+
+    for(var i = 0; i < infoPage.type.length; i++){
+        var li = document.createElement("li");
+        li.innerHTML = infoPage.type[i];
+        list.appendChild(li);
+    }
+
+    var gallery = document.querySelectorAll(".sub-gallery img");
+
+    for(var i = 0; i<infoPage.gallery.length; i++){
+        gallery[i].src = infoPage.gallery[i];
+    }
 });
